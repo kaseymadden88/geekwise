@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en" ng-app="MyStore"> <!-- This connects to app.js to create our first module -->
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,44 +20,41 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+</head>
     <body>
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">MyStore</a>
-            </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">MyStore</a>
+        </div>
 
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="#">Home</a>
+                <li ui-sref-active="active">
+                    <a ui-sref="home">Home</a>
                 </li>
-                <li>
-                    <a href="#products">Products</a>
+                <li ui-sref-active="active">
+                    <a ui-sref="products">Products</a>
                 </li>
-                <li>
-                    <a href="#about">About</a>
+                <li ui-sref-active="active">
+                <a ui-sref="about">About</a>
                 </li>
-                <li>
-                    <a href="#contact">Contact</a>
+                <li ui-sref-active="active">
+                    <a ui-sref="contact">Contact</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" ui-view>
         <!-- Main component for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <h1>MyStore Application</h1>
-            <p>This is a basic html page that we will be updating to display the e-commerce website we will be creating throughout this course.</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="#products" role="button">View Products</a>
-            </p>
-        </div>
 
     </div> <!-- /container -->
-
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
     </body>
 </html>
