@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Color", "properties": [
+    { "id": 0, "name": "Blue", "selected": false },
+    { "id": 1, "name": "Red", "selected": false },
+    { "id": 2, "name": "Green", "selected": false }
+  ] },
+  { "id": 2, "name": "Gender", "properties": [
+    { "id": 3, "name": "Female", "selected": false },
+    { "id": 4, "name": "Male", "selected": false },
+    { "id": 5, "name": "Unisex", "selected": false }
+  ] }
+]
