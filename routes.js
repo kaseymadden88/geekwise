@@ -16,6 +16,11 @@
             controller: 'ProductList', //connects to the product_list_controller file under "controllers"
             templateUrl: 'views/product_list.html'
           })
+          .state('product', {
+            url: '/product/:id',
+            controller: 'ProductDetail',
+            templateUrl: 'views/product_detail.html'
+          })
           .state('about', {
             url: '/about',
             templateUrl: ''

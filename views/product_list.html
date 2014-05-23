@@ -1,4 +1,15 @@
 <div>
+    </div>
+  <div class="products">
+    <div class="row form-group">
+       <input type="input-group">
+          <input type="text" class="form-control" ng-model="productSearch.title">
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">search</button>
+              </span>
+
+    <p class="help-block">Showing results for <strong ng-show="productSearch.title"></strong></p>
+  </div>
   <div class="filters">
     <!-- Loop over filters -->
     <div class="filter-block" ng-repeat="filter in filters">
@@ -15,7 +26,7 @@
   </div>
   <div class="products">
     <!-- loop over products -->
-    <div class="product-box" ng-repeat="product in products">
+    <div class="product-box" ng-repeat="product in products | filter:productSearch.title">
       <!-- Product title -->
       <div class='title' ng-bind="product.title"></div>
       <div class='show-base'>
@@ -32,7 +43,7 @@
             <!-- Product description -->
           </div>
           <div>
-            <a href="#" class="more">Details</a>
+            <a ui-sref="product({id: product.guid})" class="more">Details</a>
             <a href="#" class="tocart">To Cart</a>
           </div>
         </div>
