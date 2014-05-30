@@ -9,6 +9,7 @@
       $stateProvider
           .state('home', {
               url: '/',
+              controller: 'Home',
               templateUrl: 'views/home.html'
           }) //setting up our routes
           .state('products', {
