@@ -1,0 +1,10 @@
+ <div class="featured_small">
+            <div class="prod_img">
+            <img ng-src="{{product.thumbnail}}"/>
+            </div>
+            <div class="small_desc"><h3 ng-bind="product.title"></h3><p ng-bind="product.description"></p>
+            </div>
+            <div class="action">
+              <a class="button" ui-sref="product({id: product.guid})"> Read More</a>
+            </div>
+          </div>

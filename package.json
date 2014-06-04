@@ -1,10 +1,20 @@
 {
-  "name": "MyStore",
+  "name": "mystore",
   "version": "0.0.0",
   "description": "Geekwise e-commerce application",
-  "main": "index.html",
+  "main": "server.js",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-connect": "~0.7.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.3.0",
+    "cookie-parser": "^1.1.0",
+    "debug": "^0.8.1",
+    "express": "^4.4.1",
+    "mongodb-uri": "^0.9.6",
+    "mongoose": "^3.8.12",
+    "morgan": "^1.1.1",
+    "static-favicon": "^2.0.0-alpha"
   }
 }

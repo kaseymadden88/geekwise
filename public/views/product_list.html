@@ -1,0 +1,53 @@
+<div>
+    </div>
+  <div class="products">
+    <div class="row form-group">
+       <input type="input-group">
+          <input type="text" class="form-control" ng-model="productSearch.title">
+              <span class="input-group-btn">
+                  <button type="button" class="btn btn-default">search</button>
+              </span>
+
+    <p class="help-block">Showing results for <strong ng-show="productSearch.title"></strong></p>
+  </div>
+  <div class="filters">
+    <!-- Loop over filters -->
+    <div class="filter-block" ng-repeat="filter in filters">
+      <!-- Filter name -->
+      <div class='filter' ng-bind="filter.name"></div>
+      <!-- Loop over filter properties -->
+      <div class="property" ng-repeat="property in filter.properties">
+        <!-- Property name -->
+        <span ng-bind="property.name"></span>
+        <!-- Toggle selected property -->
+        <input type='checkbox' ng-model="property.selected" />
+      </div>
+    </div>
+  </div>
+  <div class="products">
+    <!-- loop over products -->
+    <div class="product-box" ng-repeat="product in products | filter:productSearch.title">
+      <!-- Product title -->
+      <div class='title' ng-bind="product.title"></div>
+      <div class='show-base'>
+        <!-- product thumbnail -->
+        <img ng-src="{{product.thumbnail}}" alt="{{product.title}}" />
+        <div class="mask">
+          <!-- Product title -->
+          <h2 ng-bind="product.title"></h2>
+          <!-- Conditional old class -->
+          <p ng-bind="product.price"></p>
+          <!-- Conditionally show special price -->
+          <p></p>
+          <div class="description" ng-bind="product.description">
+            <!-- Product description -->
+          </div>
+          <div>
+            <ms-product-details-button product-id="{{product.guid}}"></ms-product-details-button>
+            <a href="#" class="tocart">To Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1>MyStore Application</h1>
+    <p>This is a basic html page that we will be updating to display the e-commerce website we will be creating throughout this course.</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="#products" role="button">View Products</a>
+    </p>
+</div>
+<body>
+  <div id="wrap">
+    <div class="featured">
+      <div class="full">
+        <div class="banner">
+          <h1>Featured</h1>
+        </div>
+        <div class="product_desc">
+          <h2 ng-bind="featuredProducts[0].title"></h2>
+          <div class="description">
+          <p ng-bind="featuredProducts[0].description"></p>
+          </div>
+          <div class="call_to_action">
+            <a class="button" ui-sref="product({id: featuredProducts[0].guid})">Read More</a>
+          </div>
+      </div>
+      </div>
+      <div class="small">
+      <div class="three" ng-repeat="product in featuredProducts | limitTo:4" ng-if="!$first">
+        <ms-featured-product product="product"></ms-featured-product>
+      </div>
+
+      </div>
+  </div>
+</body>
