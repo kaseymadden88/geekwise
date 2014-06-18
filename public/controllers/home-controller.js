@@ -5,24 +5,21 @@
 
     app.controller('Home', function($scope, ProductService) { //angular looks up and resolves the dependency (scope: which is already a service)
 
-        $scope.featuredProducts = [];
-
-        ProductService.getProducts().then(function(response) {
-
-            var products = response.data;
-
-            angular.forEach(products, function(product) {
-
-                if(product.isFeatured === true) {
-
-                    $scope.featuredProducts.push(product);
-
-                }
-            });
+        ProductService.getFeaturedProducts().then(function(response) {
+            $scope.featuredProducts = response.data;
 
         });
 
+    });
 
-  });
 
 })(window.angular);
+
+            //angular.forEach(products, function(product) {
+
+              //  if(product.isFeatured === true) {
+
+                //    $scope.featuredProducts.push(product);
+
+                //}
+            //});

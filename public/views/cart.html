@@ -1,0 +1,88 @@
+<div class="row">
+ 
+  <h2>Your shopping cart</h2>
+ 
+  <div class="col-sm-12">
+
+    <div class-"alert alert-warning" ng-show="!getItemCount()">
+      <p>There are no items in your cart
+        <a ui-sref="products">
+          Return to Products
+        </a>
+        </p>
+    </div>
+    <table class="table table-hover" ng-show="getItemCount()">
+      <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th class="text-center">Price</th>
+        <th class="text-center">Total</th>
+        <th>&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- repeat of the items in the cart -->
+      <tr ng-repeat="item in items">
+        <td class="col-sm-8 col-md-6">
+          <div class="media">
+            <a class="thumbnail pull-left" ui-sref="product({guid: item.guid})">
+              <img class="media-object" ng-src="{{item.thumbnail}}" style="width: 72px; height: 72px;"> </a>
+ 
+            <div class="media-body">
+              <h4 class="media-heading"><a ui-shref="product({guid: item.guid})" ng-bind="item.title"></a></h4>
+              <h5 class="media-heading"> by <a href="#" ng-bind="item.manufacturer"></a></h5>
+            </div>
+          </div>
+        </td>
+        <td class="col-sm-1 col-md-1 text-center">
+          <input type="email" class="form-control">
+        </td>
+        <td class="col-sm-1 col-md-1 text-center"><strong> {{item.isSpecial ? item.specialPrice : item.price | currency}}</strong></td>
+        <td class="col-sm-1 col-md-1 text-center"><strong> {{item.isSpecial ? item.specialPrice * item.quantity : item.price * item.quantity | currency}} | currency></strong></td>
+        <td class="col-sm-1 col-md-1">
+          <button type="button" class="btn btn-danger" ng-click="removeItem()">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><h5>Subtotal</h5></td>
+        <td class="text-right"><h5><strong> {{cartSubtotal() | currency}}</strong></h5></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><h5>Estimated shipping</h5></td>
+        <td class="text-right"><h5><strong></strong></h5></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td><h3>Total</h3></td>
+        <td class="text-right"><h3><strong>{{cartTotal() | currency}}</strong></h3></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>
+          <a ui-sref="products" class="btn btn-default">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+          </a>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success">
+            Checkout <span class="glyphicon glyphicon-play"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

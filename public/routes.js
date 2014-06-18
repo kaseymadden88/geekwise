@@ -29,7 +29,22 @@
           .state('contact', {
             url: '/contact',
             templateUrl: ''
-          }); //we set up four states
+          }) //we set up four states
+          .state('cart', {
+            url: '/cart',
+            controller: 'CartController',
+            templateUrl: 'views/cart.html'
+          })
+          .state('login', {
+            url: '/login',
+            controller: 'LoginController',
+            templateUrl: 'views/login.html'
+          })
+          .state('signup', {
+            url: '/signup',
+            controller: 'SignupController',
+            templateUrl: 'views/signup.html'
+          });
     });
 
 })(window.angular);
