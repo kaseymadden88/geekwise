@@ -14,7 +14,7 @@
       templateUrl: 'templates/mini-cart.html',
       link: function(scope, elem, attr) {
  
-        scope.cartSubtotal = CartSerivce.getCartSubtotal;
+        scope.cartSubtotal = CartService.getCartSubtotal;
           // Returns the subtotal form the CartService
  
         scope.itemCount = CartService.getItemCount;
